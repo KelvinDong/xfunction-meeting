@@ -1,0 +1,555 @@
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color: #eee;
+    font-size: 16px;
+}
+
+
+video{
+    object-fit:contain;
+    border-width: 1px;
+    border-color:#111;
+    border-style: solid;
+}
+
+.hidden{
+    display: none;
+}
+
+
+.logo-title{
+    position: fixed; 
+    top:0px;
+    left:0px;
+    right:0px;
+    height: 50px;
+    padding: 5px 20px;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.logo-title .time{
+    float: right;
+    font-size: 1rem;
+    margin-top: 15px;
+}
+
+.init-body {
+    height: 100vh;
+    background-image: linear-gradient(to right, #123761,  #588FC5    , #123761);
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.group-info,
+.system-info
+{
+    margin: 30px;  
+    /*background-color: #495e73;  */
+    background-image: linear-gradient(to right, #123761,  #588FC5    , #123761);
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+    border-radius: 4px;  
+    max-height: 80%;
+    overflow-y: overlay;
+}
+
+.system-info img {
+    width: 320px;
+    height: 100%;
+    border-top-left-radius:4px;
+    border-top-right-radius:4px;
+}
+
+
+.system-info .system-info-master {
+    font-size: 1rem;   
+    line-height: 1.5rem; 
+    margin-left: 3rem;
+}
+
+.system-info button{
+    height: 47px;
+    width: 47px;
+    background-color: #2E87DB;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    position: absolute;
+    bottom: 21px;
+    right: 25px;
+    border:0px;
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+    outline:none;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.system-info div{
+    position: relative;
+}
+
+.system-info .tip-control{
+    cursor: pointer;
+    padding: 12px;
+    background-color: #2B4055;    
+}
+
+
+.system-info .tip{
+    font-size: 0.8rem;
+    margin: 0 10px;
+}
+
+
+.ban-red{
+    color:red;
+}
+
+.ban-yellow{
+    color:yellow;
+}
+
+
+
+.group-info .content{
+    display: flex;  
+    display: -webkit-flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+
+.group-info .testSpeed{
+    word-break: break-word;
+    font-size: 0.8rem;
+    padding: 12px;
+    background-color: #2B4055;  
+}
+
+.group-info .step{
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: rgb(241, 127, 21);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    text-align: center;
+}
+
+.setting-info{
+    padding:20px;
+}
+
+
+.setting-info .video-device{
+    width: 242px;
+}
+
+.setting-info button{
+    width: 200px;
+    outline:none;
+}
+
+.setting-info .local-video video {    
+    width: 240px;
+    height: 180px;
+    display: block;
+    background-color: black;
+}
+
+.setting-info .remark{
+    width: 240px; 
+    font-size: 0.8rem;
+
+}
+
+.login-info{
+    padding:20px;
+    
+}
+
+.login-info .login-content{
+    width: 240px;  display: flex;  display: -webkit-flex;    align-items: center; flex-direction: column;
+}
+
+
+
+.login-info .form-width{
+    width: 100%;
+}
+
+.login-info .tip{
+    font-size: 0.8rem;
+}
+
+.login-info input {
+    padding: 0 14px;
+    box-sizing: border-box;
+    line-height: 38.5px;
+    height: 38.5px;
+    color: #888;
+    border: solid 1px #ddd;
+    position: relative;
+    margin-bottom: 10px;
+    touch-action: none;
+}
+
+.login-info button {
+    padding: 0 14px;   
+    box-sizing: border-box;
+    line-height: 38.5px;
+    height: 38.5px;
+    background-color: #2E87DB;
+    border: solid 1px #2E87DB;
+    color: white;
+    letter-spacing: 1px;
+    outline:none;
+}
+
+.login-info button:disabled {
+    color: gray;
+}
+
+.login-type1 p,
+.login-type2 p{
+    cursor: pointer;
+}
+
+
+/*以上为配置登录等，以下为会议室*/
+
+.main-body{
+    display: flex;
+    display: -webkit-flex; 
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to right, #123761,  #588FC5    , #123761);
+}
+
+.bottom-bar{
+    position: fixed; 
+    bottom:0px;
+    left:0px;
+    right:0px;
+    height: 50px;
+    padding: 5px 20px;
+    background-color: #2B4055;
+    font-size: 1.2rem;
+    display: flex;
+    display: -webkit-flex; 
+    align-items: center;
+    
+}
+
+
+.bottom-bar button{
+    height: 40px;
+    width: 40px;
+    margin: 0 8px;
+    background-color: #4B5F77;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;    
+    border:0px;
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+    outline:none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.layout-mask{
+    position: fixed;
+    background-color:transparent;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;   
+    z-index: 100;
+}
+
+.layout-menu{
+    position: fixed;
+    z-index: 101;
+    background-color: #2E87DB;
+    height: fit-content;
+    width: fit-content;
+    cursor: pointer;
+    display: none;    
+    padding:6px;
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+    border-radius: 4px;
+}
+
+.layout-menu img{
+    width: 160px;
+    height: 90px;
+}
+
+.left-control-bar {
+    position: relative;
+    width: 250px;
+    height: 100vh;
+    background:#EBEFF2;
+    color: #fff;
+    font-size: 0.8rem;
+}
+
+.left-control-bar .sort-item{
+    display: flex;
+    display: -webkit-flex; 
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+}
+
+.left-control-bar .sort-item button {
+    border: 0px;
+    outline:none;
+    margin: 0 2px;
+}
+
+.left-control-bar .user-list {
+    position: absolute;
+    bottom: 0px;
+    top: 25px;
+    width: 100%;
+    /* height: 100%; */
+    padding: 0px;
+    margin: 0px;
+    overflow-y: overlay;
+}
+
+.left-control-bar .user-list li {
+    list-style: none;
+    color:black;
+    height: 25px;
+    line-height: 25px;
+    
+}
+
+.left-control-bar .user-list li:hover {
+    background: #D9E6EC;
+}
+
+.left-control-bar .user-list li i {
+    cursor: pointer;
+}
+
+.left-control-bar .mic-green{
+    color:rgb(241, 127, 21);
+    margin: 0 0px;
+    float: right;
+    margin: 7px 6px 6px 6px;
+}
+
+.left-control-bar .mic-gray{
+    color:#2E87DB;
+    margin: 0 0px;
+    float: right;
+    margin: 7px 6px 6px 6px;
+}
+
+.left-control-bar .mic-red{
+    color:red;    /*red*/
+    margin: 0 0px;
+    float: right;
+    margin: 7px 6px 6px 6px;
+}
+
+.left-control-bar .mic-yellow{
+    color:yellow;    
+    margin: 0 0px;
+    float: right;
+    margin: 7px 6px 6px 6px;
+}
+
+
+.left-control-bar .list-mask{
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;   
+    z-index: 100;
+}
+
+.left-control-bar .list-menu{
+    position: fixed;
+    z-index: 101;
+    top: 400px;
+    left: 400px;
+    background-color: #2E87DB;
+    color: white;
+    height: fit-content;
+    width: fit-content;
+    
+    display: none;    
+    padding:6px;
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+    border-radius: 4px;
+}
+
+.left-control-bar .list-menu span{
+    padding: 0 4px;
+    cursor: pointer;
+}
+
+.left-control-bar .list-menu span:hover{
+    color:  #D9E6EC;
+}
+
+.container-box {
+    flex-grow: 2;
+    position: relative;
+    margin: 60px;
+}
+
+.container-box .share-screen{
+    background-color: #000;
+    /*
+    background-image: url(./images/云会议logo-283x129px-白色.png);
+    background-repeat:no-repeat;
+    background-position:center 30%;*/
+    height: 100%;
+    display:flex;
+    display: -webkit-flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+
+.container-box .video-box {    
+    background-color: #000;
+    /*
+    background-image: url(./images/云会议logo-283x129px-白色.png);
+    background-repeat:no-repeat;
+    background-position: center 30%;*/
+    display:flex;
+    display: -webkit-flex; 
+    position:absolute;
+    align-items:center;
+
+}
+
+.container-box .video-box video{    
+    object-fit:cover;
+}
+
+.container-box .audio-box{
+    display: none;
+}
+
+
+
+
+.container-box .video-box .show-video{
+    background-image: url(./images/camera.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    position: relative;
+    display:flex;
+    display: -webkit-flex; 
+}
+
+.container-box .video-box .show-video .show-video-title{
+    position:absolute;
+    top: 0;
+    left: 0;
+    margin: 5px;
+    text-shadow:3px 3px 2px #000;
+    /*right:0;
+    text-align: center;*/
+}
+
+
+.container-box .video-box .show-video .show-video-menu{
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+}
+
+.container-box .video-box .show-video .show-video-menu button{
+    width: 50%;
+    background-color: gray;
+    border-color: grey;
+    outline:none;
+}
+
+
+
+
+.container-box .rotate-control{
+    color: gray;
+    position: absolute;
+    margin: 5px;
+    top:0;
+    right: 0;
+}
+
+.container-box .trans-box{
+    position: absolute;
+    bottom: 0px;
+    background-image: linear-gradient(to right, #123761bb, #588FC511 , #123761bb);
+    left: 0px;
+    right: 0px;
+    height: 10px;
+    overflow: scroll;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    
+    cursor: pointer;
+}
+
+.trans-box p{
+    
+    padding: 0 4px;
+}
+
+  
+.alert {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    min-width: 300px;
+    max-width: 600px;
+    transform: translateX(-50%);
+    z-index: 99999;
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 3px;
+  }
+
+.alert-log {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+
+.alert-warn {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+
+.alert-error {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}

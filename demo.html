@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)https://dc.pier39.cn/shj/RTC/AliRTC-1.12-WebSample/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>AliWebRTC Demo</title>
+    
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="./demo.css">
+    <script src="./js/third/jquery-1.10.2.min.js"></script>
+    <script src="./js/third/aliyun-webrtc-sdk-1.12.0.js"></script>
+
+    <script src="./js/utils.js"></script>
+</head>
+
+<body style="">
+    <div class="login">
+        <div class="main">
+            <div class="main-title">
+                <span>音视频通信</span>
+            </div>
+            <div class="main-input">
+                <input type="text" placeholder="请输入房间号" value="123456">
+            </div>
+            <div class="main-button">
+                <button>进入房间</button>
+            </div>
+        </div>
+    </div>
+    <div class="main-web" style="display: none;">
+        <div class="remote-user-list">
+            <h2>房间成员</h2>
+            <ul class="user-ul"></ul>
+        </div>
+        <div class="container-box">
+            <div class="local-display-name">
+                <span class="username">User: <b></b></span>
+                <span class="channelid">Channel Id: <b></b></span>
+                <span class="streamstate">推流状态：<b></b></span>
+            </div>
+            <div class="publisher">
+                <button class="select-preview">关闭预览</button>
+                <button class="push-stream">处理中...</button>&nbsp;&nbsp;
+                <span class="streamType" style="display: none;">
+                    <label for="cameraPublisher">推视频流</label>
+                    <input id="cameraPublisher" value="cameraPublisher" type="checkbox" name="streamType" checked="">&nbsp;
+                    <label for="screenPublish">推共享流</label>
+                    <input id="screenPublish" value="screenPublish" type="checkbox" name="streamType">
+                </span>
+            </div>
+            <div class="local-video">
+                <video autoplay="" playsinline="" controls></video>
+            </div>
+        </div>
+        
+        <div class="video-container"></div>
+    </div>
+    <div class="alert"></div>
+
+
+
+    <script src="./js/demo.js"></script>
+</body></html>

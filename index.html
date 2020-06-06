@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>云会议</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css" />
+
+    <script src="./js/third/mqttws31.js" type="text/javascript"></script>
+    <script src="./js/third/crypto-js.js" type="text/javascript"></script>
+    <script src="./js/third/jquery-1.10.2.min.js"></script>
+    <script src="./js/third/aliyun-webrtc-sdk-1.12.0.js?t=1"></script>
+    <script src="./js/utils.js"></script>
+    
+</head>
+
+<body>
+    <div class="init-web">
+        <div class="init-body ">
+
+            <div class="init-loading">
+                <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                <span class="sr-only">Loading...</span>
+            </div>
+
+            <div class="system-info hidden">                
+                <div class="content">
+                    <div style="display: flex; display: -webkit-flex;  flex-direction: row; flex-wrap:wrap;justify-content: center;">
+                        <div>     
+                            <img src="./images/show.jpg">               
+                            
+                        </div>
+                        <div style="width: 320px;">
+                            <ul class="system-info-master fa-ul"> </ul>
+                            <button class="hidden"><i class="fa fa-step-forward" aria-hidden="true"></i></button>
+                        </div>                        
+                    </div>                    
+                </div>
+                <div class="tip hidden">
+                    <ul>
+                        <li>1、Camera device</li>
+                        <li>2、Speaker and MIC device</li>
+                        <li>3、System</li>                    
+                        <ul>
+                            <li>iOS Safari's Version above 11.1.2 </li>
+                            <li class="ban-yellow">iOS weChat not Support, pls replace with IOS Safari or Chrome</li>                            
+                            <li>Android  Chrome's Version above 63 </li>
+                            <li>Android  weChat </li>                            
+                            <li>Mac Chrome's Version above 60 </li>
+                            <li>Mac Safari's Version above 11</li>
+                            <li>Windows Chrome's Version above 60</li>
+                            <li>Windows QQ Browser's Version above 10 (Speed mode)</li>
+                            <li style="text-decoration:line-through;">Windows Sogou Browser's Version above 8.6 </li>
+                            <li>Windows 360 Browser's Version above 12 (Speed mode)</li>
+                            <li>Windows Edge Browser's Version above 81 </li>
+                        </ul>
+                        <li>Hot Swap is not supported. If replace the equipment, please visit again and do not replace the equipment during the meeting.</li>
+                        <li>Download <a href="https://chrome.en.softonic.com/">Windows Chrome</a> , <a href="https://chrome.en.softonic.com/android">Android Chrome</a> ,
+                            <a href="https://chrome.en.softonic.com/iphone">IOS Chrome</a>, <a href="https://chrome.en.softonic.com/mac">MAC Chrome</a></li>
+                    </ul> 
+                </div>
+                <div class="tip-control">
+                    <i class="fa fa-info-circle" aria-hidden="true"></i>  帮助 
+                </div>
+  
+            </div>
+
+
+            <div class="group-info hidden">
+                <div class="content">
+                    <div class="setting-info">
+                        <p><span class="step">1</span> 选择摄像头：</p>
+                        <select class="video-device"></select>
+                        <select class="video-resolution hidden"></select>                
+                        <div class='local-video'>
+                            <video autoplay playsinline></video>
+                        </div>
+                        
+                    </div>
+                    <div class="setting-info">
+                        <p>
+                            <span class="step">2</span> 测试耳麦：
+                        </p> 
+                        <div style="width: 240px;">
+                            <button id="btnRecord" >点击录制</button>
+                            <br>
+                            <br>
+                            <button id="btnPlay" disabled >点击播放</button>
+
+                            <select class="audio-device hidden"></select>                
+                            <audio class="hidden" id="audioPlay" controls></audio>   
+                        </div>      
+                        <div class="remark">
+                            <p>务必完成第1、2步骤，预览到你的头像，清楚听到你的声音！</p>
+                        </div>         
+                         
+                                           
+                    </div>
+                    <div class="login-info">   
+                        
+                        <p><span class="step">3</span> 登录：</p>
+                        
+                        <div class="login-type1 "> 
+                            <div class="login-content">                                                
+                                    <input class="input-channel-id form-width" type="text" placeholder=" *会议号" >
+                                    <input class="input-channel-code form-width" type="password" placeholder=" *会议密码" >
+                                    <input class="input-display form-width" type="text" placeholder=" *与会姓名，例如 IBM-Kelvin" >
+                                        <button class="form-width form-width" disabled><i class="fa fa-sign-in" aria-hidden="true"></i> 登录</button>  
+                                        <p class="tip"><i class="fa fa-arrow-right" aria-hidden="true"></i> 管理员登录</p>  
+                            </div>
+                        </div>
+                        <div class="login-type2 hidden" >
+                            <div class="login-content">
+                                    <input class="input-to-id form-width" type="text" placeholder=" *会议号" >                    
+                                    <input class="input-account form-width" type="text" placeholder=" *管理帐号" >
+                                    <input class="input-password form-width" type="password" placeholder="  *管理密码" >                        
+                                        <button class="form-width" disabled><i class="fa fa-sign-in" aria-hidden="true"></i> 登录</button>  
+                                        <p class="tip"><i class="fa fa-arrow-right" aria-hidden="true"></i> 会议号登录</p>      
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testSpeed">
+                    
+                </div>        
+            </div>
+            
+        
+        </div>
+    </div>
+    <div class="main-web hidden">
+        <div class="main-body">
+            <div class="left-control-bar">
+                
+                <div class="sort-item">
+                    <button  style="flex-grow:2"   onclick="userListOrderByNameControl()" title="用户名排序"><i class="fa fa-sort" aria-hidden="true"></i></button>
+                    <button   onclick="userListOrderByCameraControl()" title="摄像头排序"><i class="fa fa-sort" aria-hidden="true"></i></button>   
+                    <button   onclick="userListOrderByDesktopControl()" title="屏幕分享排序"><i class="fa fa-sort" aria-hidden="true"></i></button>                                                                                       
+                    <button   onclick="userListOrderBySecretControl()" title="私聊排序"><i class="fa fa-sort" aria-hidden="true"></i></button> 
+                    <button  onclick="userListOrderByMicControl()" title="麦克风排序"><i class="fa fa-sort" aria-hidden="true"></i></button>                                                                            
+                </div>
+   
+                <ul class="user-list ">                                                        
+                </ul>
+
+                <div class="list-mask"></div>
+                <div class="list-menu">
+                    <span onclick="stopScreenControl()"><i class="fa fa-level-down" title="重新推流" aria-hidden="true"></i></span>
+                    <span  onclick="kickSomeoneControl()"><i class="fa fa-sign-out" title="踢出房间" aria-hidden="true"></i></span>
+                    <span  onclick="singleFreshControl()"><i class="fa fa-refresh" title="重新订阅" aria-hidden="true"></i></span>                    
+                    <span  onclick="transferStartControl('cn')" title="语音转录" >CN</span>
+                </div>
+            </div>
+            <div class="container-box">                
+                <div class="share-screen">暂无屏幕分享</div>
+                <div class="video-box">
+                    <p></p>
+                </div>
+
+                <div class="rotate-control">
+                    <span class="fa-stack">
+                        <i class="fa fa-square-o fa-stack-2x"></i>
+                        <i class="fa fa-expand fa-stack-1x"></i>
+                    </span>
+                </div>
+                <div class="audio-box"></div>
+                <div class="trans-box"></div>
+            </div>
+
+            <div class="bottom-bar" >
+                <button onclick="layoutMenu(event)" title="屏幕分享布局" > <i class="fa fa-desktop" aria-hidden="true"></i> </button>
+                <button onclick="layoutControl('0')" title="几分屏布局" > <i class="fa fa-th" aria-hidden="true"></i> </button>
+                <button onclick="restoreControl()" title="上一次布局" > <i class="fa fa-reply" aria-hidden="true"></i> </button>
+                <button onclick="syncControl()" title="同步布局" ><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                <div style="flex-grow: 2;"></div>
+                <button  onclick="muteControl()" title="全场静音"><i class="fa fa-microphone-slash" aria-hidden="true" ></i></button>
+                <button  onclick="transferStopControl()" title="停止语音转录"><i class="fa fa-stop-circle" aria-hidden="true" ></i></button> 
+                <button  onclick="secretStopControl()" title="停止所有私聊"><i class="fa fa-tty" aria-hidden="true" ></i></button>                                    
+                <div style="flex-grow: 2;"></div>
+                <button  onclick="fullScreen()" title="全屏"><i class="fa fa-arrows-alt" aria-hidden="true"></i></i></button>                                    
+                <button  onclick="logout()" title="退出"><i class="fa fa-sign-out" aria-hidden="true"></i></button>                                    
+            </div>
+
+            <div class="layout-mask"></div>
+            <div class="layout-menu">
+                <table>
+                    <tr>
+                        <td><img src="./images/down-mid.png" onclick="layoutControl('1')"></td>
+                        <td><img src="./images/top-mid.png" onclick="layoutControl('2')"></td>
+                        <td><img src="./images/top-right-left.png" onclick="layoutControl('3')"></td>
+                        <td><img src="./images/top-right-down.png" onclick="layoutControl('4')"></td>
+                        <td><img src="./images/down-right-up.png" onclick="layoutControl('5')"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="./images/down-right-left.png" onclick="layoutControl('6')"></td>
+                        <td><img src="./images/down-left-right.png" onclick="layoutControl('7')"></td>
+                        <td><img src="./images/down-left-up.png" onclick="layoutControl('8')"></td>
+                        <td><img src="./images/top-left-down.png" onclick="layoutControl('9')"></td>
+                        <td><img src="./images/top-left-right.png" onclick="layoutControl('10')"></td>
+                    </tr>
+                </table>
+            </div>
+            
+    
+        </div>
+    </div>
+    <div class="logo-title">
+        <span class="fa-stack fa-lg">
+            <i class="fa fa-cloud fa-stack-2x"></i>
+            <i class="fa fa-volume-up fa-stack-1x" style="color: black;"></i>
+        </span>
+        <span>&nbsp;&nbsp;云会议 </span>
+        <span class="time">18:23:00</span>
+    </div>
+    <div class="alert"></div>
+</body>
+<script src="./js/meeting-init.js"></script>
+<script src="./js/meeting-func.js"></script>
+<script src="./js/meeting-rtc.js"></script>
+<script src="./js/mqtt-func.js"></script>
+<script src="./js/transcriber.js"></script>
+
+</html>
