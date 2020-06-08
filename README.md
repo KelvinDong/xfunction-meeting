@@ -14,8 +14,8 @@
    5. Mac Chrome's Version above 60
    6. Mac Safari's Version above 11
    7. Windows Chrome's Version above 60
-   8. ~~Windows QQ Browser's Version above 10 (Speed mode)~~
-   9. Windows Sogou Browser's Version above 8.6
+   8. Windows QQ Browser's Version above 10 (Speed mode)
+   9. ~~Windows Sogou Browser's Version above 8.6~~
    10. Windows 360 Browser's Version above 12 (Speed mode)
    11. Windows Edge Browser's Version above 81
 2. 入会前硬件和网络资源检测，条件具备允许加入会议。
@@ -27,12 +27,18 @@
 6. 支持会议中任双方私聊，有利于会议进程中提及沟通准备。
 7. 支持语音转录文字。
 
+![](https://acebridge2019.oss-cn-shanghai.aliyuncs.com/201910/x/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200606222523.jpg)
+![](https://acebridge2019.oss-cn-shanghai.aliyuncs.com/201910/x/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200606222529.jpg)
+![](https://acebridge2019.oss-cn-shanghai.aliyuncs.com/201910/x/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20200606222306.png)
+![](https://acebridge2019.oss-cn-shanghai.aliyuncs.com/201910/x/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20200606222353.png)
+![](https://acebridge2019.oss-cn-shanghai.aliyuncs.com/201910/x/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20200606222437.png)
 
 # 本系统的架构体系
 系统架构中，包括：
-1. Web应用，即本项目。
-2. [API应用服务(另项目 xfunction-api )](https://github.com/KelvinDong/xfunction-api),主要完成登录验证，阿里云服务授权等。
-3. 阿里云资源
+1. Web应用，即本项目。)
+2. ~~PC应用，APP应用，暂不启动。~~
+3. [API应用服务(另项目 xfunction-api )](https://github.com/KelvinDong/xfunction-api),主要完成登录验证，阿里云服务授权等。
+4. 阿里云资源
    1. [音视频通信 RTC（Real-Time Communication）](https://www.aliyun.com/product/rtc),提供完整的音视频网络资源。
    2. [微消息队列 MQTT 版](https://www.aliyun.com/product/mq4iot)，协助实现视频会议中控制指令通信。
    3. [消息队列 RocketMQ 版](https://www.aliyun.com/product/rocketmq)，配合MQTT与实现保存主要控制指令，用于同步给新入会人员。
