@@ -27,11 +27,11 @@
 6. 支持会议中任双方私聊，有利于会议进程中提及沟通准备。
 7. 支持语音转录文字。
 
-![](https://github.com/KelvinDong/xfunction-meeting/blob/master/doc/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20200606222306.png)
-![](https://github.com/KelvinDong/xfunction-meeting/blob/master/doc/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20200606222353.png)
-![](https://github.com/KelvinDong/xfunction-meeting/blob/master/doc/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20200606222437.png)
+![](https://acebridge2019.oss-cn-shanghai.aliyuncs.com/201910/x/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20200606222306.png)
+![](https://acebridge2019.oss-cn-shanghai.aliyuncs.com/201910/x/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20200606222353.png)
+![](https://acebridge2019.oss-cn-shanghai.aliyuncs.com/201910/x/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20200606222437.png)
 
-![](https://acebridge2019.oss-cn-shanghai.aliyuncs.com/201910/x/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200606222523.jpg)![](https://github.com/KelvinDong/xfunction-meeting/blob/master/doc/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200606222529.jpg)
+![](https://acebridge2019.oss-cn-shanghai.aliyuncs.com/201910/x/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200606222523.jpg)![](https://acebridge2019.oss-cn-shanghai.aliyuncs.com/201910/x/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200606222529.jpg)
 
 
 # 本系统的架构体系
