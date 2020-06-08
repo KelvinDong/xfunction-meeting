@@ -36,7 +36,7 @@
 # 本系统的架构体系
 系统架构中，包括：
 1. Web应用，即本项目。)
-2. ~~PC应用，APP应用，暂不启动。~~
+2. ~~PC应用，APP应用，暂未启动开发。~~
 3. [API应用服务(另项目 xfunction-api )](https://github.com/KelvinDong/xfunction-api),主要完成登录验证，阿里云服务授权等。
 4. 阿里云资源
    1. [音视频通信 RTC（Real-Time Communication）](https://www.aliyun.com/product/rtc),提供完整的音视频网络资源。
