@@ -6,7 +6,6 @@ var topicM = 'ACE'; //需要操作的 Topic,第一级父级 topic 需要在控�
 var topic = 'ACE';  // 程序中重新定义  完整的主题
 var useTLS = true; //是否走加密 HTTPS，如果走 HTTPS，设置为 true
 var accessKey = 'LTAI4Frsu3vDxCMBhv9PeFzn'; //账号的 AccessKey，在阿里云控制台查看
-//secretKey = 'e5tdFhngDaPjoqEyqgkaVJP6beOq1R'; //账号的的 SecretKey，在阿里云控制台查看
 var cleansession = true; // true 订阅关系是有上限的，对于ACE应用设置true 无需保持订阅关系。
 var groupId = 'GID_ACE'; //MQTT GroupID,创建实例后从 MQTT 控制台创建
 
